@@ -1,4 +1,4 @@
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon, ShoppingBag } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -9,15 +9,16 @@ import { Sheet, SheetContent, SheetHeader, SheetTrigger } from './ui/sheet'
 
 export const Header = () => {
   return (
-    <header className="flex flex-row items-center justify-between">
+    <header className="flex flex-row items-center justify-between p-6">
+      {/* Sidebar Menu */}
       <Sheet>
         <SheetTrigger asChild>
           <Button
-            className="h-fit w-fit rounded-full px-2 py-1"
+            className="h-fit w-fit rounded-full p-2"
             size={'icon'}
-            variant={'ghost'}
+            variant={'secondary'}
           >
-            <MenuIcon className="h-4 w-4" />
+            <MenuIcon className="h-6 w-6" />
           </Button>
         </SheetTrigger>
         <SheetContent side={'left'}>
@@ -46,6 +47,20 @@ export const Header = () => {
 
           <NavigationMenu />
         </SheetContent>
+      </Sheet>
+
+      {/* Cart */}
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button
+            className="h-fit w-fit rounded-full p-2"
+            size={'icon'}
+            variant={'default'}
+          >
+            <ShoppingBag className="h-6 w-6" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side={'right'}></SheetContent>
       </Sheet>
     </header>
   )

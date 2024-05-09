@@ -12,7 +12,7 @@ export const NavigationItem = ({ href, icon, label }: NavigationItemProps) => {
   return (
     <Link href={href} className="group w-full rounded-md bg-zinc-100 p-3">
       <div className="flex w-full flex-row items-center justify-between">
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center gap-3">
           {icon}
           <span className="font-semibold group-hover:underline">{label}</span>
         </div>
