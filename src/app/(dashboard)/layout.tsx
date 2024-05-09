@@ -1,8 +1,11 @@
 import React, { PropsWithChildren } from 'react'
 
-const DashboardLayout = (props : PropsWithChildren) => {
+import { Header } from '@/components/header'
+
+const DashboardLayout = (props: PropsWithChildren) => {
   return (
-    <div className='min-w-screen flex flex-col'>
+    <div className="min-w-screen flex flex-col">
+      <Header />
       {props.children}
     </div>
   )
