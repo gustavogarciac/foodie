@@ -11,7 +11,7 @@ export default function Home() {
       <div className="mt-6">
         <Section title="Categorias" href="/categories" />
 
-        <div className="flex flex-row gap-4 overflow-y-scroll">
+        <div className="scrollbar-hidden flex flex-row gap-4 overflow-y-scroll">
           <CategoryItem name="Pizzas" />
           <CategoryItem name="Hambúrgueres" />
           <CategoryItem name="Sobremesas" />

@@ -48,7 +48,7 @@ export const Footer = () => {
 
         <Separator className="my-2" />
 
-        <div className="grid grid-cols-2 items-center justify-center">
+        <div className="grid grid-cols-2 items-center">
           <h1 className="text-2xl font-extrabold">Foodie.</h1>
           <div className="flex flex-row gap-4">
             <Button size="icon" variant="outline" className="h-fit w-fit p-1.5">
