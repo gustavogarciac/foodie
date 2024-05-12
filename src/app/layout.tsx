@@ -1,22 +1,24 @@
-import type { Metadata } from "next";
-import { Sen } from "next/font/google";
-import "./globals.css";
+import './globals.css'
 
-const sen = Sen({ subsets: ["latin"] });
+import type { Metadata } from 'next'
+import { Sen } from 'next/font/google'
+
+const sen = Sen({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Foodie",
-  description: "A aplicação de um restaurante no qual você pode realizar pedidos, visualizar cardápios, categorias e muito mais!",
-};
+  title: 'Foodie',
+  description:
+    'A aplicação de um restaurante no qual você pode realizar pedidos, visualizar cardápios, categorias e muito mais!',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
       <body className={sen.className}>{children}</body>
     </html>
-  );
+  )
 }

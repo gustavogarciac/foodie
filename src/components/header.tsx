@@ -12,7 +12,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTrigger } from './ui/sheet'
 export const Header = () => {
   return (
     <header>
-      <Container otherClasses="flex flex-row items-center justify-between p-6">
+      <Container otherClasses="flex flex-row items-center justify-between py-6 px-0">
         {/* Sidebar Menu */}
         <Sheet>
           <SheetTrigger asChild>

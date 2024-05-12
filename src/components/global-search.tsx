@@ -20,12 +20,24 @@ export const GlobalSearch = () => {
     setSearch('')
   }
 
+  function handleInputKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      onSubmitSearch()
+    }
+
+    if (e.key === 'Escape') {
+      setSearch('')
+    }
+  }
+
   return (
     <div className="flex w-full flex-row items-center gap-2 rounded-lg bg-zinc-200 px-3 py-1">
       <input
         className="min-h-11 w-full bg-transparent outline-none"
         placeholder="Pesquise pratos, restaurantes"
         onChange={(e) => setSearch(e.target.value)}
+        onKeyDown={handleInputKeyDown}
+        value={search}
       />
       <Button
         onClick={onSubmitSearch}
