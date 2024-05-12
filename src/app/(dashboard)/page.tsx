@@ -1,56 +1,63 @@
-import { ChevronRightIcon } from 'lucide-react'
-import Link from 'next/link'
+import Image from 'next/image'
 
+import { CategoryItem } from '@/components/category-item'
 import { Container } from '@/components/container'
-import { Button } from '@/components/ui/button'
+import { ProductList } from '@/components/product-list'
+import { Section } from '@/components/section'
 
 export default function Home() {
   return (
     <Container>
       <div className="mt-6">
-        <div className="flex flex-row items-center justify-between">
-          <h3 className="text-xl font-semibold">Categorias</h3>
-          <Button asChild variant={'link'}>
-            <Link
-              href={'/categories'}
-              className="flex flex-row items-center gap-1"
-            >
-              Ver todas
-              <ChevronRightIcon className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+        <Section title="Categorias" href="/categories" />
 
         <div className="flex flex-row gap-4 overflow-y-scroll">
-          <div className="flex w-fit flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
-          <div className="flex flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
-          <div className="flex flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
-          <div className="flex flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
-          <div className="flex flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
-          <div className="flex flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
-          <div className="flex flex-row items-center gap-2 rounded-md bg-zinc-100 px-2 py-1 shadow-md">
-            <div className="size-8 rounded-full bg-red-500" />
-            <span>Cachorro Quente</span>
-          </div>
+          <CategoryItem name="Pizzas" />
+          <CategoryItem name="Hambúrgueres" />
+          <CategoryItem name="Sobremesas" />
         </div>
+      </div>
+
+      <Image
+        src="/assets/wallpaper-01.jpg"
+        width={780}
+        height={780}
+        quality={100}
+        alt=""
+        className="mt-6 aspect-video max-h-60 w-full rounded-md object-cover"
+      />
+
+      <div className="mt-6">
+        <Section title="Produtos Recomendados" href="/products/recommended" />
+
+        <ProductList />
+      </div>
+
+      <div className="mt-6">
+        <Section title="Produtos em promoção" href="/products/sale" />
+
+        <ProductList />
+      </div>
+
+      <Image
+        src="/assets/wallpaper-02.jpg"
+        width={780}
+        height={780}
+        quality={100}
+        alt=""
+        className="mt-6 aspect-video max-h-60 w-full rounded-md object-cover"
+      />
+
+      <div className="mt-6">
+        <Section title="Comida Oriental" href="/categories/comida-oriental" />
+
+        <ProductList />
+      </div>
+
+      <div className="mt-6">
+        <Section title="Pizzas" href="/categories/pizzas" />
+
+        <ProductList />
       </div>
     </Container>
   )
